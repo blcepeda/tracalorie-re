@@ -43,7 +43,7 @@ export const ItemCtrl = (function() {
     getItemById: function(id) {
       let found = null;
       // Loop through items
-      data.items.forEach(function(item) {
+      data.items.forEach(item => {
         if (item.id === id) {
           found = item;
         }
@@ -55,7 +55,7 @@ export const ItemCtrl = (function() {
       calories = parseInt(calories);
 
       let found = null;
-      data.items.forEach(function(item) {
+      data.items.forEach(item => {
         if (item.id === data.currentItem.id) {
           item.name = name;
           item.calories = calories;
@@ -66,7 +66,7 @@ export const ItemCtrl = (function() {
     },
     deleteItem: function(id) {
       // Get ids
-      const ids = data.items.map(function(item) {
+      const ids = data.items.map(item => {
         return item.id;
       });
 
@@ -89,9 +89,7 @@ export const ItemCtrl = (function() {
       let total = 0;
 
       // Loop through items and add calories
-      data.items.forEach(function(item) {
-        total += item.calories;
-      });
+      data.items.forEach(item => total += item.calories);
 
       // Set total calories in data structure
       data.totalCalories = total;

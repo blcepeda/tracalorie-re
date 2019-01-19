@@ -33,7 +33,7 @@ export const StorageCtrl = (function() {
     },
     updateItemStorage: function(updatedItem) {
       let items = JSON.parse(localStorage.getItem("items"));
-      items.forEach(function(item, index) {
+      items.forEach((item, index) => {
         if (updatedItem.id === item.id) {
           items.splice(index, 1, updatedItem);
         }
@@ -42,7 +42,7 @@ export const StorageCtrl = (function() {
     },
     deleteItemFromStorage: function(id) {
       let items = JSON.parse(localStorage.getItem("items"));
-      items.forEach(function(item, index) {
+      items.forEach((item, index) => {
         if (id === item.id) {
           items.splice(index, 1);
         }

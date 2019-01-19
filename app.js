@@ -145,6 +145,7 @@ const App = (function(ItemCtrl, StorageCtrl, UICtrl) {
     StorageCtrl.deleteItemFromStorage(currentItem.id);
 
     UICtrl.clearEditState();
+    
     e.preventDefault();
   };
 

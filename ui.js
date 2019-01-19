@@ -18,7 +18,7 @@ export const UICtrl = (function() {
   return {
     populateItemList: function(items) {
       let html = "";
-      items.forEach(function(item) {
+      items.forEach(item => {
         html += `<li class="collection-item" id="item-${item.id}">
         <strong>${item.name}: </strong> <em>${item.calories} Calories</em>
         <a href="#" class="secondary-content">
@@ -66,7 +66,7 @@ export const UICtrl = (function() {
       // Turn Node list into array
       listItems = Array.from(listItems);
 
-      listItems.forEach(function(listItem) {
+      listItems.forEach(listItem => {
         const itemID = listItem.getAttribute("id");
 
         if (itemID === `item-${item.id}`) {
@@ -103,9 +103,7 @@ export const UICtrl = (function() {
       // Turn Node list into array
       listItems = Array.from(listItems);
 
-      listItems.forEach(function(item) {
-        item.remove();
-      });
+      listItems.forEach(item => item.remove());
     },
     hideList: function() {
       document.querySelector(UISelectors.itemList).style.display = "none";
@@ -123,7 +121,6 @@ export const UICtrl = (function() {
       document.querySelector(UISelectors.addBtn).style.display = "inline";
     },
     showEditState: function() {
-      //UICtrl.clearInput();
       document.querySelector(UISelectors.updateBtn).style.display = "inline";
       document.querySelector(UISelectors.deleteBtn).style.display = "inline";
       document.querySelector(UISelectors.backBtn).style.display = "inline";
